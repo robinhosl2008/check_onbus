@@ -10,7 +10,7 @@ const gerarNumeroAleatorio = (min, max) => {
 }
 
 const campanhas = {
-    titulo: "Campanhas",
+    titulo: "Lista de Campanhas",
     campanhas: [
         {
             nome: "Nome da Campanha 1",
