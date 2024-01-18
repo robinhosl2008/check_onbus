@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { Image, TouchableOpacity, StyleSheet, Text, View } from "react-native";
 import Estrelas from "../../../componentes/Estrelas";
 
 export default function Campanha({nome, imagem, distancia, estrelas}) {
-    const [ selecionado, setSelecionado ] = useState(false);
+    const [ selecionado, inverteSelecionado ] = useReducer(
+        (selecionado) => !selecionado,
+        false
+    );
 
     return <TouchableOpacity
-        onPress={() => { setSelecionado(!selecionado) }}
+        onPress={inverteSelecionado}
     >
         <View style={estilos.cartao}>
             <Image source={imagem} style={estilos.imagem} accessibilityLabel={nome} />

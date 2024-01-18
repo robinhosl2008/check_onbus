@@ -2,17 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, Text, StyleSheet } from 'react-native';
 
 import Campanha from './Campanha';
-import { carregaCampanhas } from '../../../servicos/carregaDados';
+import useCampanhas from './../../../hooks/useCampanhas';
 
 export default function Campanhas({ topo: Topo }) {
-    const [titulo, setTitulo] = useState('');
-    const [campanhas, setCampanhas] = useState('');
-
-    useEffect(() => {
-        const retorno = carregaCampanhas();
-        setTitulo(retorno.titulo);
-        setCampanhas(retorno.campanhas)
-    }, []);
+    const [titulo, campanhas] = useCampanhas();
 
     const ListaTitulo = () => {
         return <>
