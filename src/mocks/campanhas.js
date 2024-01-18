@@ -15,31 +15,31 @@ const campanhas = {
         {
             nome: "Nome da Campanha 1",
             imagem: green,
-            distancia: `${gerarNumeroAleatorio(1, 500)} metros`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5)
         },
         {
             nome: "Nome da Campanha 2",
             imagem: grow,
-            distancia: `${gerarNumeroAleatorio(1, 500)} metros`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5)
         },
         {
             nome: "Nome da Campanha 3",
             imagem: jannyJack,
-            distancia: `${gerarNumeroAleatorio(1, 500)} metros`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5)
         },
         {
             nome: "Nome da Campanha 4",
             imagem: potager,
-            distancia: `${gerarNumeroAleatorio(1, 500)} metros`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5)
         },
         {
             nome: "Nome da Campanha 5",
             imagem: salad,
-            distancia: `${gerarNumeroAleatorio(1, 500)} metros`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5)
         }
     ]

@@ -1,11 +1,21 @@
-import React, { useState, useReducer } from "react";
+import React, { useMemo, useReducer } from "react";
 import { Image, TouchableOpacity, StyleSheet, Text, View } from "react-native";
 import Estrelas from "../../../componentes/Estrelas";
+
+const distanciaEmMetros = (distancia) => {
+    return `${distancia} metros`;
+}
 
 export default function Campanha({nome, imagem, distancia, estrelas}) {
     const [ selecionado, inverteSelecionado ] = useReducer(
         (selecionado) => !selecionado,
         false
+    );
+
+    // toda vez que a distância for alterada o useMemo grava na memória.
+    const distanciaTexto = useMemo(
+        () => distanciaEmMetros(distancia),
+        distancia
     );
 
     return <TouchableOpacity
@@ -23,7 +33,7 @@ export default function Campanha({nome, imagem, distancia, estrelas}) {
                     />
                 </View>
                 
-                <Text>{ distancia }</Text>
+                <Text>{ distanciaTexto }</Text>
             </View>
         </View>
     </TouchableOpacity>
