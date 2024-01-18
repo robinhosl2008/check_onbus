@@ -2,10 +2,33 @@ import React, { useState, useEffect } from "react";
 import { KeyboardAvoidingView, View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Platform, SafeAreaView } from "react-native";
 
 import logoLogin from "../../../assets/onbus/logo_tela_login.jpg";
+import LoginController, { fazerLogin } from "../../../controller/LoginController";
 
+// setDisplay("flex")
 export default function Campos() {
     const [display, setDisplay] = useState("none");
 
+    /**
+     * Pegando os valores do formulário.
+     * 
+     * Nos inputs é usada a propriedade 'onChange' que irá chamar o método que pegará o valor do input.
+     */
+    const [campoLogin, setCampoLogin] = useState("");
+    const [campoSenha, setCampoSenha] = useState("");
+
+    const manipuladorDeEventoCampoLogin = (valor) => {
+        setCampoLogin(valor);
+    }
+
+    const manipuladorDeEventoCampoSenha = (valor) => {
+        setCampoSenha(valor);
+    }
+
+    const manipuladorDeEnvio = () => {
+        const loginController = new LoginController();
+        loginController.fazLogin(campoLogin, campoSenha)
+    }
+    
     return <SafeAreaView>
         <KeyboardAvoidingView style={css.conteiner} behavior={ Platform.OS == "ios" ? "padding" : "height" }>
             <View style={css.conteiner}>
@@ -17,9 +40,9 @@ export default function Campos() {
             </View>
  
             <View style={[css.conteiner, css.login__form]}>
-                <TextInput style={css.login__input} placeholder="Usuário" />
-                <TextInput style={css.login__input} placeholder="Senha" secureTextEntry={true} />
-                <TouchableOpacity style={css.login__button} onPress={() => setDisplay("flex")}>
+                <TextInput style={css.login__input} placeholder="Usuário" value={campoLogin} onChangeText={(e) => manipuladorDeEventoCampoLogin(e)} />
+                <TextInput style={css.login__input} placeholder="Senha" value={campoSenha} onChangeText={(e) => manipuladorDeEventoCampoSenha(e)} secureTextEntry={true} />
+                <TouchableOpacity style={css.login__button} onPress={() => manipuladorDeEnvio()}>
                     <Text style={css.login__buttonText}>Entrar</Text>
                 </TouchableOpacity>
             </View>
