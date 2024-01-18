@@ -13,7 +13,7 @@ import Home from './src/telas/Home/index';
 
 function App() {
     return <SafeAreaView style={ estilos.tela }>
-        <Home />
+        <Login />
     </SafeAreaView>
 }
 
