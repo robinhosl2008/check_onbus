@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { carregaTopo, carregaCampanhas } from '../../../servicos/carregaDados';
-import logo from './../../../assets/onbus/Logo_ONBUS-final_cor-1-1-1024x638.png';
+import logo from './../../../assets/onbus/Logo_200x200.png';
 
 class Topo extends React.Component {
     state = {

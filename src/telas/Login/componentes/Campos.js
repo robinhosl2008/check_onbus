@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { KeyboardAvoidingView, View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Platform, SafeAreaView } from "react-native";
 
-import logoLogin from "../../../assets/onbus/logo_tela_login.jpg";
+import logoLogin from "../../../assets/onbus/Logo_200x200.png";
 import LoginController, { fazerLogin } from "../../../controller/LoginController";
 
 // setDisplay("flex")

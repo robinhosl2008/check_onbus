@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FlatList, Text, StyleSheet } from 'react-native';
 
 import Campanha from './Campanha';
@@ -14,14 +14,12 @@ export default function Campanhas({ topo: Topo }) {
         </>
     }
 
-    return <>
-        <FlatList
+    return <FlatList
             data={campanhas}
             renderItem={({ item }) => <Campanha {...item} />}
             keyExtractor={({nome}) => nome}
             ListHeaderComponent={ ListaTitulo }
         ></FlatList>
-    </>
 }
 
 const estilos = StyleSheet.create({

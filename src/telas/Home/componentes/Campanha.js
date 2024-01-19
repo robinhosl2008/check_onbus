@@ -15,7 +15,7 @@ export default function Campanha({nome, imagem, distancia, estrelas}) {
     // toda vez que a distância for alterada o useMemo grava na memória.
     const distanciaTexto = useMemo(
         () => distanciaEmMetros(distancia),
-        distancia
+        [distancia]
     );
 
     return <TouchableOpacity
