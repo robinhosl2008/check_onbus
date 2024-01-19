@@ -1,13 +1,18 @@
 import React from "react";
 
 class LoginController {
-    fazerLogin(login, senha) {
+    fazLogin(login, senha) {
         const token = this.pegaToken(login, senha)
         console.log("Fazendo o Login");
         console.log(token);
     }
 
     pegaToken(login, senha) {
+        // Faço uma requisição para a API solicitando o token. Para pegar o token o usuário
+        // deve ter enviado suas credenciais para a realização do login. Se não passar no
+        // login o token não é criado.
+
+        // fazRequisição() enviando o formData e link para fazer o login e recuperar o token.
         return "token";
     }
 
