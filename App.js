@@ -6,17 +6,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ color: '#000000' }}>Home Screen</Text>
-    </View>
-  );
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#008000' }}>
+            <Text style={{ color: '#000000' }}>Home Screen</Text>
+        </View>
+    );
 }
 
 function LoginScreen() {
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{ color: '#000000' }}>Login Screen</Text>
-    </View>
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FD6801' }}>
+            <Text style={{ color: '#000000' }}>Login Screen</Text>
+        </View>
+    );
 }
 
 const Stack = createNativeStackNavigator();
@@ -24,7 +26,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login" style={{ backgroundColor: '#FD6801' }}>
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Home" component={HomeScreen}/>
       </Stack.Navigator>
