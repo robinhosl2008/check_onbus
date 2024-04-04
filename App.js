@@ -1,22 +1,27 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function HomeScreen() {
+function LoginScreen({ navigation }) {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#008000' }}>
-            <Text style={{ color: '#000000' }}>Home Screen</Text>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FD6801' }}>
+            <Text style={{ color: '#000000' }}>
+                Login Screen
+            </Text>
+            <Button title='Entrar' onPress={() => navigation.navigate('Home')} />
         </View>
     );
 }
 
-function LoginScreen() {
+function HomeScreen() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FD6801' }}>
-            <Text style={{ color: '#000000' }}>Login Screen</Text>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#008000' }}>
+            <Text style={{ color: '#000000' }}>
+                Home Screen
+            </Text>
         </View>
     );
 }
@@ -26,9 +31,9 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen}/>
-        <Stack.Screen name="Home" component={HomeScreen}/>
+      <Stack.Navigator initialRouteName="Login"> 
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
