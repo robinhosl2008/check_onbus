@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Text, Button, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import { LoginController } from '../dist/controllers/loginController.js';
 
-function LoginScreen({ navigation }) {
+function LoginScreen({ navegation }) {
+    const loginController = new LoginController();
+
     return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FD6801' }}>
             <Text style={{ color: '#ffffff', fontSize: 40 }}>
@@ -19,7 +22,8 @@ function LoginScreen({ navigation }) {
             />
             <Button 
                 title='Entrar' 
-                onPress={() => navigation.navigate('Home')} 
+                onPress={() => loginController.show()}
+                // onPress={() => navigation.navigate('Home')} 
             />
         </SafeAreaView>
     );

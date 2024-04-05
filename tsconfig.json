@@ -1,15 +1,16 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json",
+  // "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "outDir": "app/dist", // O TypeScript será compilado nessa pasta.
+    "rootDir": "./app/src",
+    "outDir": "./app/dist", // O TypeScript será compilado nessa pasta.
     "target": "ES6", // Essa é a versão compilada para o JavaScript.
     "noEmitOnError": false, // Impede a compilação do TypeScript para o JavaScript caso tenham erros.
     "noImplicitAny": true, // Impede que a compilação aceite variáves, por exemplo, do tipo 'any'.
     "removeComments": true, // Ao compilar o código todos os comentários em métodos são apagados.
     "strictNullChecks": true, // Essa opção nos obriga a tratar caso o valor seja 'NULL' em uma variável que não tenha essa possibilidade.
     "experimentalDecorators": true, // Estou dizendo ao TypeScript que quero utilizar decorators experimentais.
-    "moduleResolution": "bundler", // Esta configuração é usada para especificar como o compilador TypeScript deve resolver os módulos durante o processo de compilação.
+    "moduleResolution": "node", // Esta configuração é usada para especificar como o compilador TypeScript deve resolver os módulos durante o processo de compilação.
     "sourceMap": true, // Adiciona arquivos .map que permitem debugar os arquvos TS no navegador.
   },
-  "include": ["app/src/**/*"] // Essa opção diz para considerar todas as pastas e arquivos dentro desse diretório.
+  "include": ["./app/src/**/*", "app/views"] // Essa opção diz para considerar todas as pastas e arquivos dentro desse diretório.
 }
