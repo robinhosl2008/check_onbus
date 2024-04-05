@@ -1,27 +1,48 @@
 import * as React from 'react';
-import { View, Text, Button, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, Button, TextInput, StyleSheet, SafeAreaView } from 'react-native';
 
 function LoginScreen({ navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FD6801' }}>
             <Text style={{ color: '#ffffff', fontSize: 40 }}>
-                Tela de Login
+                Login
             </Text>
             <TextInput
-                style={styles.input}
+                style={styles.inputLogin}
+                placeholder='E-mail'
+                placeholderTextColor={'#000000'}
             />
-            <Button title='Entrar' onPress={() => navigation.navigate('Home')} />
+            <TextInput
+                style={styles.inputPassword}
+                placeholder='Senha'
+                placeholderTextColor={'#000000'}
+            />
+            <Button 
+                title='Entrar' 
+                onPress={() => navigation.navigate('Home')} 
+            />
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    login: {
+    inputLogin: {
+        width: 300,
         height: 40,
         margin: 12,
-        borderWidth: 1,
+        borderWidth: 0.1,
         padding: 10,
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+        color: '#000000'
+    },
+    inputPassword: {
+        width: 300,
+        height: 40,
+        margin: 12,
+        borderWidth: 0.1,
+        padding: 10,
+        backgroundColor: '#ffffff',
+        color: '#000000'
     }
 });
 
