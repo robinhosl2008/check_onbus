@@ -22,13 +22,16 @@ function LoginScreen({ navegation }) {
             />
             <Button 
                 title='Entrar' 
-                onPress={() => loginController.show()}
-                // onPress={() => navigation.navigate('Home')} 
+                onPress={() => {
+                        var a = loginController.login();
+                        alert(a);
+                    }
+                }
             />
         </SafeAreaView>
     );
 }
-
+// () => navigation.navigate('Home')
 const styles = StyleSheet.create({
     inputLogin: {
         width: 300,
