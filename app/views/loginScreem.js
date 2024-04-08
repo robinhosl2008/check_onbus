@@ -6,8 +6,8 @@ function LoginScreen({ navigation }) {
     const loginController = new LoginController();
 
     return (
-        <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FD6801' }}>
-            <Text style={{ color: '#ffffff', fontSize: 40 }}>
+        <SafeAreaView style={styles.content}>
+            <Text style={styles.text40}>
                 Login
             </Text>
             <TextInput
@@ -20,7 +20,7 @@ function LoginScreen({ navigation }) {
                 placeholder='Senha'
                 placeholderTextColor={'#000000'}
             />
-            <TouchableOpacity style={styles.btnLogar} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.btnLogar} onPress={() => navigation.navigate('Chamado')}>
                 <Text>Entrar</Text>
             </TouchableOpacity> 
         </SafeAreaView>
@@ -29,6 +29,16 @@ function LoginScreen({ navigation }) {
 // async () => await loginController.login()
 // () => navigation.navigate('Home')
 const styles = StyleSheet.create({
+    content: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        backgroundColor: '#FD6801'
+    },
+    text40: {
+        color: '#ffffff', 
+        fontSize: 40
+    },
     inputLogin: {
         width: 300,
         height: 40,
