@@ -20,16 +20,13 @@ function LoginScreen({ navigation }) {
                 placeholder='Senha'
                 placeholderTextColor={'#000000'}
             />
-            <TouchableOpacity style={styles.btnLogar} onPress={async () => await loginController.login()}>
+            <TouchableOpacity style={styles.btnLogar} onPress={() => navigation.navigate('Home')}>
                 <Text>Entrar</Text>
             </TouchableOpacity> 
         </SafeAreaView>
     );
 }
-// () => {
-//     var a = loginController.login();
-//     alert(a);
-// }
+// async () => await loginController.login()
 // () => navigation.navigate('Home')
 const styles = StyleSheet.create({
     inputLogin: {
