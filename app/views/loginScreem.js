@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Text, Button, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, Button, TextInput, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { LoginController } from '../dist/controllers/loginController.js';
 
-function LoginScreen({ navegation }) {
+function LoginScreen({ navigation }) {
     const loginController = new LoginController();
 
     return (
@@ -20,24 +20,23 @@ function LoginScreen({ navegation }) {
                 placeholder='Senha'
                 placeholderTextColor={'#000000'}
             />
-            <Button 
-                title='Entrar' 
-                onPress={() => {
-                        var a = loginController.login();
-                        alert(a);
-                    }
-                }
-            />
+            <TouchableOpacity style={styles.btnLogar} onPress={async () => await loginController.login()}>
+                <Text>Entrar</Text>
+            </TouchableOpacity> 
         </SafeAreaView>
     );
 }
+// () => {
+//     var a = loginController.login();
+//     alert(a);
+// }
 // () => navigation.navigate('Home')
 const styles = StyleSheet.create({
     inputLogin: {
         width: 300,
         height: 40,
         margin: 12,
-        borderWidth: 0.1,
+        borderWidth: 0.3,
         padding: 10,
         backgroundColor: '#ffffff',
         color: '#000000'
@@ -46,10 +45,19 @@ const styles = StyleSheet.create({
         width: 300,
         height: 40,
         margin: 12,
-        borderWidth: 0.1,
+        borderWidth: 0.3,
         padding: 10,
         backgroundColor: '#ffffff',
         color: '#000000'
+    },
+    btnLogar: {
+        width: 100,
+        height: 45,
+        margin: 12,
+        backgroundColor: '#FA383E',
+        borderWidth: 0.3,
+        alignItems: 'center',
+        padding: 10
     }
 });
 
